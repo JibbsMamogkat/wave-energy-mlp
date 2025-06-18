@@ -1,4 +1,4 @@
-````markdown
+
 # 🌊 Wave Farm Energy Prediction with Neural Networks
 
 This project applies machine learning to predict the total power output of wave energy converter (WEC) farms based solely on buoy layout configuration. Using simulation-based datasets from Perth and Sydney, we trained a neural network to model the relationship between spatial layout and energy generation — with implications for real-world coastal planning, including the Philippines.
@@ -101,4 +101,3 @@ pip install -r requirements.txt
 
 Would you like me to customize it further with your name or repo name? Or generate a `requirements.txt` too?
 ```
-````
