@@ -1,103 +1,109 @@
 
 # 🌊 Wave Farm Energy Prediction with Neural Networks
 
-This project applies machine learning to predict the total power output of wave energy converter (WEC) farms based solely on buoy layout configuration. Using simulation-based datasets from Perth and Sydney, we trained a neural network to model the relationship between spatial layout and energy generation — with implications for real-world coastal planning, including the Philippines.
+This project applies machine learning to predict the total power output of wave energy converter (WEC) farms based solely on buoy layout configuration. Using simulation-based datasets from Perth and Sydney, a neural network was trained to model the relationship between layout and energy generation — with future application in the Philippine context.
 
 ---
 
-## 📌 Project Overview
+## 📌 Overview
 
-- **Objective**: Predict the total energy output of a wave farm from its layout using a neural network.
-- **Model Used**: `MLPRegressor` from scikit-learn.
-- **Key Dataset**: `WEC_Perth_49.csv` — 49-buoy layouts with 36,043 samples.
-- **SDG Focus**: United Nations Sustainable Development Goal 7 (Affordable and Clean Energy).
+- **Goal**: Predict total energy output of a WEC layout using machine learning
+- **Model**: `MLPRegressor` (Neural Network)
+- **Input Features**: X1–Y49 (98 total for 49-buoy layouts)
+- **Target**: `Total_Power`
+- **Main Dataset**: `WEC_Perth_49.csv` (36,043 layouts)
+- **SDG Focus**: UN SDG 7 - Affordable and Clean Energy
 
 ---
 
 ## ⚙️ Features
 
-- 📊 Trains a neural network to learn from buoy position data (X1–Y49).
-- 🔍 Evaluates performance using MSE, MAE, and Percent Error.
-- 🌏 Tests generalization on a Sydney dataset.
-- 🇵🇭 Applies the trained model to a sample Philippine layout for feasibility testing.
-- 🔁 Compares activation functions (`relu`, `tanh`, `logistic`).
-- 📈 Visualizes predictions vs actual outputs.
+- ✅ Trains a neural network using layout-only inputs
+- 📊 Evaluates accuracy using MSE, MAE, and Percent Error
+- 🌍 Generalizes to Sydney layouts and a simulated Philippine layout
+- 🔁 Compares ReLU, tanh, and logistic activation functions
+- 📈 Visualizes model performance
 
 ---
 
 ## 🧠 Key Results
 
-| Dataset       | MAE (W) | Percent Error |
-|---------------|---------|----------------|
-| **Perth Test Set** | ~25,062 | ~0.63% ✅ |
-| **Sydney Layout** | ~166,534 | ~4.14% ❗ |
-| **PH Sample Layout** | Predicted Output: ~5.35 MW |
-
-- `ReLU` was the best-performing activation.
-- Model generalizes reasonably but is sensitive to wave climate differences.
+| Dataset           | MAE (W)  | Percent Error |
+|------------------|----------|----------------|
+| Perth (Test Set) | ~25,062  | ~0.63% ✅       |
+| Sydney (49-buoy) | ~166,534 | ~4.14% ❗       |
+| PH Sample Layout | Predicted ≈ **5.35 MW** |
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-.
-├── wec-mlp-model.py            # Main notebook/script
-├── sample_philippine_layout.csv
-├── WEC_Perth_49.csv
-├── WEC_Sydney_49.csv
-├── figures/                    # Plots and visualizations (optional)
-└── README.md
-
+FINAL-PROJECT/
+├── wec-mlp-model.py               # Main Python script
+├── sample_philippine_layout.csv  # 7x7 grid layout (60m spacing)
+├── wave-farms-study.pdf          # Reference research paper
+├── WEC.zip                       # Compressed version of datasets
+├── large-scale+wave+energy+farm.zip  # Raw reference zip (if needed)
+├── WEC_Perth_49.csv              # Main training dataset
+├── WEC_Sydney_49.csv             # Generalization test
+├── WEC_Perth_100.csv             # Optional advanced dataset
+├── WEC_Sydney_100.csv            # Optional test set for 100-buoy
+````
 
 ---
 
-## 🚀 Getting Started
+## ▶️ How to Run
 
-### 🔧 Requirements
-
-* Python 3.8+
-* pandas
-* scikit-learn
-* matplotlib
-* numpy
-
-Install dependencies:
+### 1. Install dependencies:
 
 ```bash
-pip install -r requirements.txt
+pip install pandas scikit-learn matplotlib numpy
 ```
 
-### ▶️ Run the Model
+### 2. Open and run `wec-mlp-model.py`
 
-1. Open the `wec-mlp-model.py` script.
-2. Make sure all `.csv` files are in the same directory.
-3. Run all cells or execute the script to train, evaluate, and visualize.
+Make sure all `.csv` files are in the same directory.
+
+---
+
+## 🔬 Model Architecture
+
+* Model: `MLPRegressor`
+* Hidden Layers: (128, 64)
+* Activation: ReLU (best-performing)
+* Learning Rate: 0.0005
+* Iterations: 1000
+* Scaler: `StandardScaler`
+
+---
+
+## 🧪 Experiments Conducted
+
+* ✅ Hyperparameter tuning (learning rate, iterations)
+* ✅ Activation function comparison (`relu`, `tanh`, `logistic`)
+* ✅ Generalization test on Sydney 49-buoy data
+* ✅ Sample layout simulation for Philippine use case
+* ✅ Predicted vs Actual plots for all model runs
 
 ---
 
 ## 📌 Limitations & Future Work
 
-* Current model is trained only on Perth data. Accuracy in other locations (like Sydney or PH) may be limited.
-* Future work: integrate wave-specific parameters (e.g., direction, height) or retrain with PH-specific datasets.
-* A Keras version could allow deeper architectures and GPU training.
+* Model trained only on Perth layouts; generalization is limited
+* Wave-specific inputs (e.g., direction, height) not included
+* Future work: train model using PH-specific simulated wave data
+* Explore deeper models using Keras or PyTorch
 
 ---
 
 ## 💡 Acknowledgments
 
-* Simulation data source: archive.ics.uci.edu/dataset/882/large-scale+wave+energy+farm
-* Developed as a capstone project for DS100L: Applied Data Science.
-* Model powered by scikit-learn.
+* Dataset Source: Large-scale wave energy optimization study (see `wave-farms-study.pdf`), link: archive.ics.uci.edu/dataset/882/large-scale+wave+energy+farm
+* Project created for **DS100L: Applied Data Science**
+* Powered by `scikit-learn`, `pandas`, and `matplotlib`
 
 ---
 
 ## 📬 Contact
 
-
-```
-
----
-
-Would you like me to customize it further with your name or repo name? Or generate a `requirements.txt` too?
-```
