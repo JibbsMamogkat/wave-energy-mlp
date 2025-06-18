@@ -8,6 +8,7 @@ This project applies machine learning to predict the total power output of wave 
 ## 📌 Overview
 
 - **Goal**: Predict total energy output of a WEC layout using machine learning
+- **Dataset**: [UCI Large-Scale Wave Energy Farm](https://archive.ics.uci.edu/dataset/882/large-scale+wave+energy+farm)
 - **Model**: `MLPRegressor` (Neural Network)
 - **Input Features**: X1–Y49 (98 total for 49-buoy layouts)
 - **Target**: `Total_Power`
@@ -99,7 +100,8 @@ Make sure all `.csv` files are in the same directory.
 
 ## 💡 Acknowledgments
 
-* Dataset Source: Large-scale wave energy optimization study (see `wave-farms-study.pdf`), link: archive.ics.uci.edu/dataset/882/large-scale+wave+energy+farm
+* Dataset Source: [UCI Machine Learning Repository – Large-Scale Wave Energy Farm](https://archive.ics.uci.edu/dataset/882/large-scale+wave+energy+farm)
+* Original study provided simulation data for both Perth and Sydney wave regimes
 * Project created for **DS100L: Applied Data Science**
 * Powered by `scikit-learn`, `pandas`, and `matplotlib`
 
