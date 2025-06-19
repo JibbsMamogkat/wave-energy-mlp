@@ -104,6 +104,7 @@ Make sure all `.csv` files are in the same directory.
 * ✅ Generalization test on Sydney 49-buoy data
 * ✅ Sample layout simulation for Philippine use case
 * ✅ Predicted vs Actual plots for all model runs
+* ✅ Extension: 100-buoy model training and evaluation on Perth and Sydney data
 
 ---
 
