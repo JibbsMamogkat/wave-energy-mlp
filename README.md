@@ -26,14 +26,16 @@ This project applies machine learning to predict the total power output of wave 
 - 📈 Visualizes model performance
 
 ---
+## 📊 Model Performance Summary
 
-## 🧠 Key Results
+| **Model**           | **Training Dataset**     | **Test Dataset**        | **MAE (W)**   | **Percent Error** | **Notes**                            |
+|---------------------|--------------------------|--------------------------|---------------|--------------------|----------------------------------------|
+| 49-Buoy Model       | Perth (36,043 samples)   | Perth                    | 25,062        | 0.63% ✅           | Best overall performance               |
+| 49-Buoy Model       | Perth                    | Sydney (49-buoy)         | 166,534       | 4.14%              | Moderate generalization drop           |
+| 49-Buoy Model       | Perth                    | Sample PH Layout         | —             | —                  | Predicted: **5,350,615.65 W**          |
+| 100-Buoy Model      | Perth (7,277 samples)    | Perth                    | 260,840       | 3.67%              | Weaker due to low data volume          |
+| 100-Buoy Model      | Perth                    | Sydney (100-buoy)        | 729,819       | 10.18% ❌          | Poor generalization and prediction bias|
 
-| Dataset           | MAE (W)  | Percent Error |
-|------------------|----------|----------------|
-| Perth (Test Set) | ~25,062  | ~0.63% ✅       |
-| Sydney (49-buoy) | ~166,534 | ~4.14% ❗       |
-| PH Sample Layout | Predicted ≈ **5.35 MW** |
 
 ---
 
