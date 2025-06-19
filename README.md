@@ -39,6 +39,22 @@ This project applies machine learning to predict the total power output of wave 
 
 ---
 
+### 📈 Model Visualizations
+
+**🔹 49-Buoy Model on Perth Data**
+![Perth 49 Model](figures/perth-49-model.png)
+
+**🔹 49-Buoy Model on Sydney Data (Generalization Test)**
+![Perth 49 on Sydney](figures/perth-49-model-on-sydney-49-test.png)
+
+**🔸 100-Buoy Model on Perth Data**
+![Perth 100 Model](figures/perth-100-model.png)
+
+**🔸 100-Buoy Model on Sydney Data (Generalization Test)**
+![Perth 100 on Sydney](figures/perth-100-model-on-sydney-100-test.png)
+
+---
+
 ## 📁 Project Structure
 
 ```bash
